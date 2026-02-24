@@ -258,17 +258,17 @@ const { title } = Astro.props;
         <div class="header-content">
           <div>
             <h1 class="site-title">
-              <a href="/">Nine Transitions</a>
+              <a href=".">Nine Transitions</a>
             </h1>
             <p class="site-description">Price Action trading on the Emini</p>
           </div>
           <button class="mobile-menu-btn" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
           <nav>
-            <a href="/" class={Astro.url.pathname === '/' ? 'active' : ''}>Home</a>
-            <a href="/trading-guide/" class={Astro.url.pathname === '/trading-guide/' ? 'active' : ''}>Trading Guide</a>
-            <a href="/setup-chart/" class={Astro.url.pathname === '/setup-chart/' ? 'active' : ''}>Setup Chart</a>
-            <a href="/price-action-trading/" class={Astro.url.pathname === '/price-action-trading/' ? 'active' : ''}>Price Action Trading</a>
-            <a href="/glossary/" class={Astro.url.pathname === '/glossary/' ? 'active' : ''}>Glossary</a>
+            <a href="." class={Astro.url.pathname === '/' || Astro.url.pathname === '/ninetrans-astro/' ? 'active' : ''}>Home</a>
+            <a href="trading-guide/" class={Astro.url.pathname === '/trading-guide/' || Astro.url.pathname === '/ninetrans-astro/trading-guide/' ? 'active' : ''}>Trading Guide</a>
+            <a href="setup-chart/" class={Astro.url.pathname === '/setup-chart/' || Astro.url.pathname === '/ninetrans-astro/setup-chart/' ? 'active' : ''}>Setup Chart</a>
+            <a href="price-action-trading/" class={Astro.url.pathname === '/price-action-trading/' || Astro.url.pathname === '/ninetrans-astro/price-action-trading/' ? 'active' : ''}>Price Action Trading</a>
+            <a href="glossary/" class={Astro.url.pathname === '/glossary/' || Astro.url.pathname === '/ninetrans-astro/glossary/' ? 'active' : ''}>Glossary</a>
           </nav>
         </div>
       </div>

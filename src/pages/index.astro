@@ -13,7 +13,7 @@ const sortedPosts = allPosts.sort((a, b) =>
     {sortedPosts.map((post) => (
       <article class="post">
         <h3 class="post-title">
-          <a href={`/posts/${post.slug}/`}>{post.data.title}</a>
+          <a href={`posts/${post.slug}/`}>{post.data.title}</a>
         </h3>
         <div class="post-meta">
           <time>
