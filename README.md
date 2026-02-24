@@ -77,34 +77,44 @@ export default defineConfig({
 
 ### 3. Build and Deploy
 
-#### Option A: Using GitHub Actions (Recommended)
+#### Option A: Using GitHub Actions (Recommended - Automatic Deployment)
 
-Create `.github/workflows/deploy.yml`:
+This is already set up for you! Here's how to use it:
 
-```yaml
-name: Deploy to GitHub Pages
+1. **Initialize Git repository**:
+   ```bash
+   cd /home/tsi/md/ninetrans-astro
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   ```
 
-on:
-  push:
-    branches: [main]
+2. **Create GitHub repository**:
+   - Go to https://github.com/new
+   - Repository name: `ninetrans-astro`
+   - Make it Public or Private
+   - Click "Create repository"
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - run: npm ci
-      - run: npm run build
-      - uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-```
+3. **Push your code**:
+   ```bash
+   git remote add origin https://github.com/pseudo777/ninetrans-astro.git
+   git push -u origin main
+   ```
 
-Then enable GitHub Pages in your repository settings, set the source to "GitHub Actions".
+4. **Enable GitHub Pages**:
+   - Go to your repository on GitHub
+   - Click `Settings` → `Pages`
+   - Under "Build and deployment" → "Source":
+     - Select `GitHub Actions`
+   - Click `Save`
+
+5. **Automatic deployment**:
+   - That's it! Every time you push to the `main` branch, GitHub Actions will automatically:
+     - Install dependencies
+     - Build the site
+     - Deploy to GitHub Pages
+   - Your site will be available at: `https://pseudo777.github.io/ninetrans-astro/`
 
 #### Option B: Manual Deployment
 
