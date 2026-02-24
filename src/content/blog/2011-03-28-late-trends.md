@@ -1,0 +1,14 @@
+---
+title: "Late trends"
+pubDate: 2011-03-28T00:00:00
+---
+
+![](/images_upscaled/2011-03-28_1958.png)
+
+When trends breakout late in the day after an entire day of horizontal movement (as opposed to a late continuation or reversal move),  they tend to go on till the end of day without any break or reversal. This is because scale in traders will not trade counter-trend since there is insufficient time to make scale in plays. This results in a sharp rally or sell off that you should hold till the close.
+
+The early move from open to HOD was weak with overlapping bars and was essentially a test of yesterday's high. Once it failed, the price dropped to test the low of the trading range. A breakout below the LOD at b26 was sustained for two more bars, which is a good sign that a BP trade would set up and it developed at b46.
+
+A DP trade, which by its nature is a higher probability trade developed at b63 followed by an A2 at b72,73. Note that every decent short signal since b16 has been successful, so the A2 was certainly a swing candidate.
+
+Even if you missed all these, b74, a short shaved trend bar just below the ema is a fairly good entry bar and could be shorted on its own merit.

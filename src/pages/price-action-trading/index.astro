@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+
+const archive = {};
+allPosts.forEach(post => {
+  const year = post.data.pubDate.getFullYear();
+  const month = post.data.pubDate.getMonth() + 1;
+  const key = `${year}-${month}`;
+  if (!archive[key]) {
+    archive[key] = {
+      year,
+      month,
+      monthName: post.data.pubDate.toLocaleString('default', { month: 'long' }),
+      posts: []
+    };
+  }
+  archive[key].posts.push(post);
+});
+
+const sortedArchive = Object.values(archive).sort((a, b) => {
+  if (a.year !== b.year) return b.year - a.year;
+  return b.month - a.month;
+});
+---
+
+<BaseLayout title="Nine Transitions - Price Action Trading">
+  <div slot="archive">
+    {sortedArchive.slice(0, 5).map((group) => (
+      <div class="archivedate">
+        <a href="/archive/">{group.year}</a>
+        <span style="margin-left: 0.5rem; color: var(--color-text-light);">
+          ({group.posts.length})
+        </span>
+      </div>
+    ))}
+  </div>
+
+  <article class="post">
+    <h1 class="post-title">Price Action Trading</h1>
+    <div class="post-body">
+      <h3 style="margin-top: 2rem;">Stage 1: Bars</h3>
+      <p>The first stage in mastering price action is to know what any kind of bar is. This just not just mean differentiating between a reversal bar and an inside bar but also what the bar means in a given context. For example, you should master various aspects that strengthen and weaken a setup such as:</p>
+      
+      <ul style="margin: 1rem 0; padding-left: 2rem;">
+        <li style="margin-bottom: 0.5rem;">an up/down trend bar pair is a reversal signal only if its not in mid-range. </li>
+        <li style="margin-bottom: 0.5rem;">A doji before a reversal bar greatly weakens the signal.</li>
+        <li style="margin-bottom: 0.5rem;">An inside bar needs to have a strong close to be a reversal signal, but a tail may be acceptable if its a failed breakout of a Trading Range.</li>
+        <li style="margin-bottom: 0.5rem;">doji signal bars often work for with-trend trades but fail for counter-trend trades.</li>
+        <li style="margin-bottom: 0.5rem;">huge bars are trading ranges</li>
+      </ul>
+      
+      <h3 style="margin-top: 2rem;">Stage 2: Bar Sequences</h3>
+      <p>Master bar sequences. Most setups are bar sequences so you should be able to recognize them. For example:</p>
+      
+      <ul style="margin: 1rem 0; padding-left: 2rem;">
+        <li style="margin-bottom: 0.5rem;">2 legged pullbacks </li>
+        <li style="margin-bottom: 0.5rem;">three pushes with TCL OS</li>
+        <li style="margin-bottom: 0.5rem;">trend channel overshoots of MTL</li>
+      </ul>
+      
+      <p>In addition, you should be able to expect common bar patterns based on current bar. For example:</p>
+      
+      <ul style="margin: 1rem 0; padding-left: 2rem;">
+        <li style="margin-bottom: 0.5rem;">large bar could become possible Spike and Channel</li>
+        <li style="margin-bottom: 0.5rem;">large bar could be a failed breakout</li>
+        <li style="margin-bottom: 0.5rem;">a pullback bar followed by doji could become barb wire. </li>
+        <li style="margin-bottom: 0.5rem;">bars suddenly turn tiny and doji-like in a strong trend could be TTR </li>
+      </ul>
+      
+      <h3 style="margin-top: 2rem;">Stage 3: Market Structure</h3>
+      <p>Market structure takes a bit more experience, but this is the most important. You should be able to keep track of whether the market is trending, is about to break out into a trend from a trading range, etc. You should also be able to determine the kind of move and the type of trading thats successful in this market. Is it a soft trend where you should buy every fL2? Is it a hard trend and you should short every L1? Is the range very tight and every trade is a scalp since every stop will be taken out? Is it a strongly trending market that is likely to run for a long time? Is it a wild and crazy market that's stopping everyone in all directions? The quicker you can recognize these, the faster you can act.</p>
+      
+      <p>Market structure is your filter and overall guide ensuring you dont take trades in the wrong direction. If you like to swing for multiple points, you want to trade with-trend in a strongly trending market. If the market is weak or tight, you can trade both with and counter-trend (with some experience). </p>
+      
+      <p>Market structure mastery also allows you to sit though pullbacks and exit at the right time, maximizing your gains. Until you have mastered this, you will feel helpless in anything but the normal average trends and trading ranges. You will sit helplessly in a hard trend and short your way to the top in a soft trend.</p>
+      
+      <p>However, even with market structure mastery, you wont be able to enter a setup correctly without mastering Stages 1 and 2. If your entries are stopped out and the market then moves in the direction of your original entry, you have a poor mastery of stage 2.</p>
+      
+      <p>Stage 1 is so fundamental that you need to be a really poor trader to not master this. If you are buying above bear bars and selling below bull bars and many of your entries turn into 1tf and 5tfs you probably need to work on mastering your bars properly.</p>
+      
+      <p>During trading hours, mark the chart with your read of the Stages above and compare your performance at the end of the day. This will help identify areas that need work and you should pick one or two specific deficiencies and correct them one after another. Most people are unable to fix all problems at once, so don't bother trying it.</p>
+      
+      <p>Using the <a href="/posts/2011-01-29-the-rule-of-ten-a-trading-plan/">10 week rule</a>, if you have correctly identified items you seek to correct on the chart, you can move on to the next one.</p>
+      
+      <h3 style="margin-top: 2rem;">See Also:</h3>
+      
+      <p><a href="/posts/2011-09-13-price-action-basics-i-bar-selection/">Price Action Basics I - Bar Selection</a></p>
+      <p><a href="/posts/2011-09-14-price-action-basics-ii-reversals-and-pullbacks-in-trends/">Price Action Basics II - Reversals and pullbacks in trends</a></p>
+      <p><a href="/posts/2011-09-15-price-action-basics-iii-1st-reversal-or-opening-reversal/">Price Action Basics III - 1st Reversal or Opening Reversal</a></p>
+      <p><a href="/posts/2011-09-26-price-action-basics-iv-trading-ranges-trends-fbos-and-bps/">Price Action Basics IV - Trading ranges, Trends, fBOs and BPs</a></p>
+      <p><a href="/posts/2011-09-27-price-action-basics-v-the-open-gaps/">Price Action Basics V - The Open Gaps</a></p>
+      <p><a href="/posts/2011-09-28-price-action-basics-vi-first-bar/">Price Action Basics VI - The first bar</a></p>
+      <p><a href="/posts/2011-09-29-price-action-basics-vii-the-initial-trend-1rev-and-1pb/">Price Action Basics VII - The initial trend, 1Rev and 1PB</a></p>
+      <p><a href="/posts/2011-09-30-price-action-basics-viii-the-opening-range-and-its-measured-move/">Price Action Basics VIII - The Opening range and its measured move</a></p>
+      <p><a href="/posts/2011-10-03-price-action-basics-ix-scalp-and-swing-entries/">Price Action Basics IX - Scalp and swing entries</a></p>
+      <p><a href="/posts/2011-10-05-price-action-basics-x-more-than-bars/">Price Action Basics X - More than bars</a></p>
+      
+      <p><a href="/posts/2011-01-17-four-trades-off-nine-transitions/">Four trades off nine transitions</a></p>
+      <p><a href="/posts/2011-01-29-the-rule-of-ten-a-trading-plan/">Rule of ten</a></p>
+      <p><a href="/posts/2011-11-13-two-strikes/">Two Strikes Risk management policy</a></p>
+      
+      <p><strong><a href="/posts/2011-08-12-trading-plan-trading-range-day/">Trading plan: Trading Range day</a></strong></p>
+      <p><strong><a href="/posts/2011-08-11-trading-plan-trend-day/">Trading plan: Trend days</a></strong></p>
+      <p><strong><a href="/posts/2011-07-27-hard-trend-identification-and-trading/">Trading plan: Hard Trends</a></strong></p>
+      <p><strong><a href="/posts/2011-03-03-correctly-trading-a-soft-trend/">Trading plan: Soft Trends</a></strong></p>
+      <p><strong><a href="/posts/2011-07-01-spike-and-channel-day/">Trading plan: Spike and Channel days</a></strong></p>
+    </div>
+  </article>
+</BaseLayout>

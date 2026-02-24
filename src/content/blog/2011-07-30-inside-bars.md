@@ -1,0 +1,14 @@
+---
+title: "Inside bars"
+pubDate: 2011-07-30T00:00:00
+---
+
+![](/images_upscaled/2011-07-30_1505.png)A small bar at one end of a large bar sets up a fade of the large bar, regardless of the color of either bar, but is a stronger signal when the entry is in the direction of the inside bar. For example b23 setup a fade of b22 and the price should be expected to at least take out the low of b22.
+
+Sometimes, its perfectly fine to fade a large bar off an inside bar of the same color if the entry with in the direction of the overall trend. For example, b30 setup a fade of b29. While both were bull bars, the overall trend was already down (2 lower lows and 2 lower highs). The same with b39 fade of b38.
+
+The most important criteria is that the inside bar should be less than half the size of the outside bar. For example, b9 and b45 are terrible entries simply because there is insufficient room to the low of the bar to eke out a profit. If the bars have more than a tick tail, you may wish to take second entry instead.
+
+Small bars whose body is completely inside the body of the larger bar (b21 inside b20) also count as inside bars as long as their tails are not too long.
+
+The simplest way to trade inside bars are to only take them where the inside bar is less than half the outside bar and only with trend (b30) or after a swing move or a third push up (b23).

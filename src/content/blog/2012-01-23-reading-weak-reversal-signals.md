@@ -1,0 +1,14 @@
+---
+title: "Reading weak reversal signals"
+pubDate: 2012-01-23T00:00:00
+---
+
+![](/images_upscaled/2012-01-23_5m.png)
+
+![](/images_upscaled/2012-01-23_30m.png)When a reversal signal looks weak, whether its an oio (b8-10, b32-34) or a regular reversal bar, if the entry bar has a strong close (shaved or 1t) like b11, then there is a very good chance it will act like a reversal bar with a strong close. Often, such a bar is a strong reversal bar on a higher timeframe when combined with the strong entry bar as the 30m chart on the left illustrates the opening reversal at b8-10.
+
+2BR (b76,77) can be considered strong as long as the second bar takes out the first bar with a strong close and are of comparable size and not misaligned by more than 1t or 2t if shaved.
+
+When a reversal signal that is poor has a poor entry bar (b28, b70), there is a good chance of continuation.
+
+When the signal indicates a major change in direction (b11,b35), usually its a far safer option to take the first pullback in the new direction (b17,b43). When a signal is ambiguous, the chances of a pullback very soon after the reversal are high.

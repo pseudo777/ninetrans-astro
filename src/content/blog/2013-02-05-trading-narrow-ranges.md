@@ -1,0 +1,14 @@
+---
+title: "Trading narrow ranges"
+pubDate: 2013-02-05T00:00:00
+---
+
+![](/images_upscaled/2013-02-05_5m.png)
+
+![](/images_upscaled/2013-02-05_results.png)
+
+If you love trading trends and fading large trading ranges, the kryptonite for you is a tight trading range. Scalpers and faders however, can do well in such a market.
+
+When you sense the market may be trending, i.e., higher highs and higher lows or lower highs and lower lows(b15-29, b29-35), you can attempt to trade with the trend. However, if the bars suddenly turn into dojis (b36-38) or turn into overlapping sideways bars (b43-60), you should stop trading.
+
+A versatile trader can switch between trend trading and fading and trade any such day but such a trader has to first master both techniques individually before attempting to interleave them in the same trading day.

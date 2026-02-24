@@ -1,0 +1,14 @@
+---
+title: "Early strength indicates strength late in the day"
+pubDate: 2012-04-03T00:00:00
+---
+
+![](/images_upscaled/2012-04-03_5m.png)
+
+When a day breaks into a trend (b18-62) and presents a reversal signal (b63), you need an assessment of the chances of success and a possible swing add-on. Will this attempt only go to the ema? Will it fail after a couple of weak attempts to go up and continue the slide down?
+
+There are a few indications you can use to make such assessments. First of all, was there a trendline break? (b33-b54). If not, the chances of a successful reversal are probably low. The trend could terminate and move horizontally, but a trendline break greatly adds to the chances of a successful reversal.
+
+The second thing you need is a Wedge (b33,57,63) with a strong signal bar (b63) or a successful test of the swing point that led to the trendline break (b33).
+
+To swing your position, you need indications of strength early in the day (b5-10,b11-15). If there was no early strength, its unlikely that your move will get too far. (It does happen, but is rare).

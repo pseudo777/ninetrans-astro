@@ -1,0 +1,14 @@
+---
+title: "Limit entries in a channel"
+pubDate: 2011-10-14T00:00:00
+---
+
+![](/images_upscaled/2011-10-14_5m.png)
+
+A channel is a leg made of overlapping bars with very little pullback. This means that channels do not give a clear entry. Occasionally, you get a small bar such as b8 and you could enter using it as a signal bar. However often you do not get any such bar and when it does you may find yourself buying at the top of the channel as the buyers above b22 discovered.
+
+One of the characteristic features of channels is that their first breakout almost always fails. This allows us to enter at the channel trendline whenever a bar closes very near to it. For example, b11 close could be sold and b17 close could be bought. This works very well with the first close near the trendline. Subsequent closes such as b15 close did not fare that well.
+
+Weak closes such as b21 or closes that are far away from the trendline such as b19 and b13 are suspect since there is still plenty of room to the trendline. These should be avoided.
+
+Extending these to general trends is a bit harder. In theory, you should be able to buy any strong bear close near a bull trendline such as b49 or b61 and sell any bull close near a bear trendline. However, unlike channels, where the first breakout is a high probability failure, a general trend such as the one from b35 to b79 is not expected to fail any trendline break attempt with such a high probability.

@@ -1,0 +1,16 @@
+---
+title: "Classic trend day"
+pubDate: 2011-03-29T00:00:00
+---
+
+![](/images_upscaled/2011-03-29_1956.png)
+"In bear markets, stocks open strong and close weak.
+In bull markets, stocks open weak and close strong."
+
+When the market opens close to the low, runs down and reverses near the low, its usually a good indication for a possible bull trend move. The safest entry is at the first pullback and you should be able to hold on to it till the end of the day or trend termination.
+
+Sometimes horizontal TTRs will set in that almost always break in the direction of the prior trend. The best way to get in this move is on a breakout pullback like b51 today. A horizontal TTR is usually a shallow pullback on a higher timeframe chart. One way to save your self being chopped up is to look at a 30m chart and take an entry there. For example, today's move was a shallow A2 pullback on the 30m chart.
+
+Nevertheless, if you only moved your stop below every two legged higher low, you could have held the swing portion of the trade till close.
+
+-

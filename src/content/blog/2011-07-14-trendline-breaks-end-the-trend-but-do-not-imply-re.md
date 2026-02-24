@@ -1,0 +1,11 @@
+---
+title: "Trendline breaks end the trend but do not imply reversal"
+pubDate: 2011-07-14T00:00:00
+---
+
+![](/images_upscaled/2011-07-14_1903.png)
+When the trend accelerates (b40-b46) after a sufficiently large move (b13-34), the resulting deep trend channel line violation (b46,47) will usually give a strong snapback move. The deeper the incursion, the stronger the snapback (b47-49).
+
+When counter-trend traders are able to make a very strong move such as the snapback above, the result is a trend line break. Often, the break is obvious without the need for an actual trendline. This show of strength is usually sufficient to pause the trend for a while, however it may not reverse the entire trend right away. This is because at the point of the trendline break (b49 high), sellers will want to sell at a better price and the buyers who missed out will want to buy at a better price. The result is a test of the trend extreme (b47 low) or at least a test of the entry bar (b48 low). A second strong buying at this point will often but not always cause the trend to reverse.
+
+This implies that most entries should exit when the snapback pauses and swing entries should wait for the test of the prior extreme.

@@ -1,0 +1,26 @@
+---
+title: "Targets on multiple contracts"
+pubDate: 2013-10-16T00:00:00
+---
+
+![](/images_upscaled/2013-10-16.png)
+
+![](/images_upscaled/2013-10-16_results.png)
+
+I've been experimenting with various exit strategies and my current strategy is the following:
+
+When trading one contract, exit at 2x risk (for CL 10t stop, 20t target)
+
+When trading two contracts, exit one at 2x risk, one at 5x risk (10t stop, 20t, 50t targets)
+
+When trading three contracts, exit two contracts at 2x risk, one at 5x risk (10t stop, 2x 20t, 50t targets)
+
+When trading any other even number of contracts, divide in half and trade like its two contracts.
+
+When trading any other odd number of contracts, exit half + one contract at 2x risk, half - one contract at 5x risk. (i.e. for 5c, exit 3c at 20t, 2t at 50t)
+
+The 5x risk above is a swing target and must be adjusted according to market action. For example, you may need to make the target modest if the day looks like it will be small or let it run if the market looks like it could run all day.
+
+Note that Ninjatrader summary of trades uses the first exit to denote exit time and your swing exit can only be seen if you uncheck "Group Trades by ATM strategy". Therefore to see your swing exit, you need to parse through a longer table as shown below:
+
+![](/images_upscaled/2013-10-16_results2.png)

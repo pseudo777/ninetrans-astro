@@ -1,0 +1,23 @@
+{
+  "name": "ninetrans-astro",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@astrojs/mdx": "^4.2.3",
+    "astro": "^5.17.3",
+    "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.12"
+  }
+}

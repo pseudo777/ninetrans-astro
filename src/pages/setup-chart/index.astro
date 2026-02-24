@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+
+// 按年月分组归档
+const archive = {};
+allPosts.forEach(post => {
+  const year = post.data.pubDate.getFullYear();
+  const month = post.data.pubDate.getMonth() + 1;
+  const key = `${year}-${month}`;
+  if (!archive[key]) {
+    archive[key] = {
+      year,
+      month,
+      monthName: post.data.pubDate.toLocaleString('default', { month: 'long' }),
+      posts: []
+    };
+  }
+  archive[key].posts.push(post);
+});
+
+const sortedArchive = Object.values(archive).sort((a, b) => {
+  if (a.year !== b.year) return b.year - a.year;
+  return b.month - a.month;
+});
+---
+
+<BaseLayout title="Nine Transitions - Setup Chart">
+  <div slot="archive">
+    {sortedArchive.slice(0, 5).map((group) => (
+      <div class="archivedate">
+        <a href="/archive/">{group.year}</a>
+        <span style="margin-left: 0.5rem; color: var(--color-text-light);">
+          ({group.posts.length})
+        </span>
+      </div>
+    ))}
+  </div>
+
+  <article class="post">
+    <h1 class="post-title">Setup Chart</h1>
+    <div class="post-body">
+      <p>Read this first: <a href="/posts/2011-01-17-four-trades-off-nine-transitions/">Four trades off nine transitions</a></p>
+      
+      <div style="overflow-x: auto; margin: 1.5rem 0;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <tbody>
+            <tr>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border);"></td>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); background: var(--color-background-alt); font-weight: 600; text-align: center;">UP</td>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); background: var(--color-background-alt); font-weight: 600; text-align: center;">FLAT</td>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); background: var(--color-background-alt); font-weight: 600; text-align: center;">DOWN</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); background: var(--color-background-alt); font-weight: 600;">UP</td>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); background: #dbeafe; text-align: center;">A2, 1CBO, hH1,G2,BT</td>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); text-align: center;">TT</td>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); text-align: center;">W,W1P</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); background: var(--color-background-alt); font-weight: 600;">FLAT</td>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); text-align: center;">BO</td>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); text-align: center;">fBO</td>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); text-align: center;">BO</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); background: var(--color-background-alt); font-weight: 600;">DOWN</td>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); text-align: center;">W, W1P</td>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); text-align: center;">TT</td>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); background: #dbeafe; text-align: center;">A2, 1CBO, hL1,G2,BT</td>
+            </tr>
+            <tr>
+              <td colspan="4" style="padding: 1rem; border: none;"></td>
+            </tr>
+            <tr>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); border-bottom: 2px solid var(--color-text);"></td>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); border-bottom: 2px solid var(--color-text);"></td>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); border-bottom: 2px solid var(--color-text);"></td>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); border-bottom: 2px solid var(--color-text);"></td>
+            </tr>
+            <tr>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); background: var(--color-background-alt); font-weight: 600;">BO</td>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); text-align: center;">TRI</td>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); text-align: center;">XT</td>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); text-align: center;">BP</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); background: var(--color-background-alt); font-weight: 600;">fBO</td>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); text-align: center;">WBO</td>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); text-align: center;">rev bar</td>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); text-align: center;">DP</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); background: var(--color-background-alt); font-weight: 600;">TT</td>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); text-align: center;">DT/DB</td>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); text-align: center;">TTR</td>
+              <td style="padding: 0.75rem; border: 1px solid var(--color-border); text-align: center;">fRev+fA2</td>
+            </tr>
+            <tr>
+              <td colspan="4" style="padding: 1rem; border: none;"></td>
+            </tr>
+            <tr>
+              <td style="padding: 0.75rem; border-left: 1px solid var(--color-border);"></td>
+              <td style="padding: 0.75rem; background: #a5f3fc; text-align: center; font-weight: 600;">1pb</td>
+              <td style="padding: 0.75rem;"></td>
+              <td style="padding: 0.75rem; background: #86efac; text-align: center; font-weight: 600;">1rev</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <p>This chart describes all my setups from the nine transitions. When the trend is up, I'm looking for A2 in a normal trend, 1chbo in a channel move, H1 in a hard trend and G2 in a deep pullback. Im also looking to exit and stay out when the trend ends in a Trend termination (TT) move such as a double top, TTR or weak reversal followed by weak A2. If there is a wedge move and reversal, Im looking for W and W1P entries to reverse. Down trend is very similar except all entries are complementary.</p>
+      
+      <p>When the movement is flat or trading range, Im looking for trend breakouts. usually these are triangle breakouts, expanding triangle breakouts and breakout pullbacks.</p>
+      
+      <p>If the range is large enough, I may consider fBO trades. These include a reversal bar on breakout, Double bottom pullback and a two or three legged failed breakout (WBO). Often I will not take these trades and simply take one of the breakout on the other side of the range.</p>
+      
+      <p>TT is not something to trade but rather a sign to exit your trend positions. A double top or double bottom, a TTR move or a reversal and continuation trade that both do not have follow through are the most common trend termination signals.</p>
+      
+      <p>In addition to the above, I also trade the first reversal of the day and the first pullback of the day at the open, but those are complex topics that deserve their own posts.</p>
+    </div>
+  </article>
+</BaseLayout>

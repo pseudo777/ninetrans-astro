@@ -1,0 +1,11 @@
+---
+title: "Failed Wedges"
+pubDate: 2011-06-13T00:00:00
+---
+
+![](/images_upscaled/2011-06-13_2121.png)
+True failed Wedges are rare. Normally wedges that fail do so because they do not represent extreme behavior. Today, we had a W5,10,20 that did overshoot the trend channel line strongly and was expected to give two legs up. But after only a single leg to b24, it took out the low of the wedge (b29) thus giving a failed Wedge. Failed W are expected to go to a measured move of the wedge as we did at b44.
+
+If the move to b24 was 2 legged, its no longer a failed wedge, but still a sell signal since a shallow 2 legged move after a wedge is a continuation signal. It just wouldn't be a measured move to the size of the wedge.
+
+One of the reasons to enter after a pullback after the wedge reversal (W1P) rather than the W itself is to avoid a misread W or a failed W such as today. Its a good idea to enter a small position on a strong W if there is a strong signal bar such as b44. This is because there is a chance that the W could not pullback until much later (often above the ema).

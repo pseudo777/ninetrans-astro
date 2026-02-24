@@ -1,0 +1,9 @@
+---
+title: "Major reversal: Double TL break"
+pubDate: 2011-06-16T00:00:00
+---
+
+![](/images_upscaled/2011-06-16_1950.png)
+A trendline break (b19) followed by a test of the extreme (b23), followed by an additional trendline break (b30), followed by a 2L failure to reach the extreme (b37) is a double trendline break and a major reversal. You should always take these since they lead to strong trends.
+
+While a trendline break and a 2L move to a new extreme (b25) is a signal in itself, the poor signal bar should keep you out. A second entry is acceptable even with a marginal signal but a 2L LH is a much better signal. A 1L LH (b32) should rarely be taken (for example when there is a strong overshoot). In all other cases, a 2L LH is an ideal entry point.

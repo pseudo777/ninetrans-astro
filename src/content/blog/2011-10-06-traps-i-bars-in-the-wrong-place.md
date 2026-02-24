@@ -1,0 +1,16 @@
+---
+title: "Traps I - Bars in the wrong place"
+pubDate: 2011-10-06T00:00:00
+---
+
+![](/images_upscaled/2011-10-06_5m.png)
+
+Many traders lose money because they do not recognize traps in time and once they are in, they will hold hoping for a miracle. With some experience and pain, any trader will eventually learn to recognize traps and avoid them.
+
+There are many kinds of traps, but they have some common features. The first is that the bar taken alone probably looks great. For example, b1 today was a reversal bar at the ema with a very strong close. A new trader can be forgiven for  assuming that its breakout will lead to a strong trend. However, a reversal bar needs to dip beyond a prior swing to be valid -- if not, its just a trading range bar.
+
+b14 is a similar trap. Although it did give a decent scalp move, being the first attempt to reverse a strong move from the LOD is unlikely to succeed and strong traders added on at the ema instead of shorting.
+
+b44 seemed to be a possible bull reversal bar at the ema but its placed after a long string of bear bars. What is more, b36 was a failed H2 and should lead to two legs down, so b44 is unlikely to be a successful trade.
+
+b65 comes after a possible major reversal (MR) and is unlikely to turn around without at least 2 attempts down. b69 on the other hand would be an OK trade if it was a small bar at the top of the flag since its a possible failure after a second attempt up.

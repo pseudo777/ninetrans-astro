@@ -1,0 +1,15 @@
+---
+title: "Triangle Breakouts"
+pubDate: 2011-06-18T00:00:00
+---
+
+![](/images_upscaled/2011-06-17_0004.png)
+Breakouts are the hardest pattern to predict correctly and the one pattern that fails the most often. There are broadly three kinds of breakouts:
+
+- Triangle
+- Expanding triangle
+- Trading Range breakout
+
+Essentially, all breakouts are breaking out of trading ranges and a triangle breakout represents a narrowing trading range while an expanding triangle represents a widening trading range. A flat trading range breakout can be anticipated by its failure to breakout the other side or could be entered on a breakout pullback. This approach is unsuitable for triangles.
+
+However, for a narrowing triangle, there is a simple guideline. It normally breaks (b34) in the direction of the previous trend (AM bear move b1-12). Sometimes the triangle will break and reverse right away, but if the breakout bar has a strong close and the stop beyond it (b34 hi) is not taken out, its usually a successful breakout and should run for at least 2 legs.

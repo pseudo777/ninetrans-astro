@@ -1,0 +1,29 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<BaseLayout title={post.data.title}>
+  <article class="post">
+    <h1 class="post-title" style="font-size: 2.25rem;">{post.data.title}</h1>
+    <div class="post-meta">
+      <time>
+        {post.data.pubDate.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        })}
+      </time>
+    </div>
+    <div class="post-body">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

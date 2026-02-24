@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+
+// 按年月分组归档
+const archive = {};
+allPosts.forEach(post => {
+  const year = post.data.pubDate.getFullYear();
+  const month = post.data.pubDate.getMonth() + 1;
+  const key = `${year}-${month}`;
+  if (!archive[key]) {
+    archive[key] = {
+      year,
+      month,
+      monthName: post.data.pubDate.toLocaleString('default', { month: 'long' }),
+      posts: []
+    };
+  }
+  archive[key].posts.push(post);
+});
+
+// 排序归档
+const sortedArchive = Object.values(archive).sort((a, b) => {
+  if (a.year !== b.year) return b.year - a.year;
+  return b.month - a.month;
+});
+---
+
+<BaseLayout title="Nine Transitions - Trading Guide">
+  <div slot="archive">
+    {sortedArchive.slice(0, 5).map((group) => (
+      <div class="archivedate">
+        <a href="/archive/">{group.year}</a>
+        <span style="margin-left: 0.5rem; color: var(--color-text-light);">
+          ({group.posts.length})
+        </span>
+      </div>
+    ))}
+  </div>
+
+  <article class="post">
+    <h1 class="post-title">Trading Guide</h1>
+    <div class="post-body">
+      <p>So you want to be a trader. Here is a list of things you need before you can get going.</p>
+      
+      <ol style="margin: 1.5rem 0; padding-left: 2rem;">
+        <li style="margin-bottom: 0.75rem;">A trading account</li>
+        <li style="margin-bottom: 0.75rem;">Trading software that allows SIM trading</li>
+        <li style="margin-bottom: 0.75rem;">A trading style</li>
+        <li style="margin-bottom: 0.75rem;"><a href="/posts/2011-01-17-four-trades-off-nine-transitions/">Some basic setups</a></li>
+        <li style="margin-bottom: 0.75rem;"><a href="/posts/2011-01-29-the-rule-of-ten-a-trading-plan/">A trading plan</a></li>
+        <li style="margin-bottom: 0.75rem;">Starting Capital</li>
+      </ol>
+      
+      <p>Once you find a good futures broker, you should be able to open an account and get a trading platform for a small amount of money.</p>
+      
+      <p>The first thing you do is to trade for a while on a simulator (SIM). This will allow you to learn how to place orders and move your stops while make all your silly mistakes like buying instead of selling, entering the incorrect quantity and get it over with without losing any money. </p>
+      
+      <p>Trading on SIM also allows you to watch the market move and get a feel for price action. Note that the market is like a very complex diamond and you have to trade for a couple of years before you see most of its faces. Even then, you haven't seen them all.</p>
+      
+      <p>A trading style is different from how you read the market. Its about how you place your entry orders, take your profits and place your stops. Price action trading is fairly straight forward this way, since your entries, exits and stops are very well defined. Your long entry is 1 tick above the signal bar, stop is 1 tick below and your target is 4 ticks or more above your entry. This predefined ruleset make it easy to follow for beginners.</p>
+      
+      <p>I have extensively discussed various setups in my blog. <a href="http://www.brookspriceaction.com/">Al Brooks</a>' work is very good place to get more information regarding price action.</p>
+      
+      <p>A <a href="/posts/2011-01-29-the-rule-of-ten-a-trading-plan/">trading plan</a> such as mine is very important to have and follow. The most important take away from this is that trading is a mental skill you work on and develop and once you get good at trading SIM  (zero real contracts), you keep increasing the contract size slowly and thus overcome emotional barriers that come naturally when real money is at stake.</p>
+      
+      <p>Once you graduate from SIM to real money, always know that you will lose in the beginning. This is normal. You need to be able to be in the game for a while, so you need to allocate some real capital. One way to not bankrupt yourself early is to have daily, weekly and monthly loss limits. Once you hit the loss limit, switch to SIM trading. This allows you to have a yearly budget for trading and keeps you in the game allowing you to improve yourself.</p>
+      
+      <p style="margin-top: 2rem; font-weight: 600;">See Also:</p>
+      
+      <p><a href="/posts/2011-08-12-trading-plan-trading-range-day/">Trading plan: Trading Range day</a></p>
+      <p><a href="/posts/2011-08-11-trading-plan-trend-day/">Trading plan: Trend days</a></p>
+      <p><a href="/posts/2011-07-27-hard-trend-identification-and-trading/">Trading plan: Hard Trends</a></p>
+      <p><a href="/posts/2011-03-03-correctly-trading-a-soft-trend/">Trading plan: Soft Trends</a></p>
+      <p><a href="/posts/2011-07-01-spike-and-channel-day/">Trading plan: Spike and Channel days</a></p>
+    </div>
+  </article>
+</BaseLayout>

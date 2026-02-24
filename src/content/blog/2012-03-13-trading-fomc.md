@@ -1,0 +1,14 @@
+---
+title: "Trading FOMC"
+pubDate: 2012-03-13T00:00:00
+---
+
+![](/images_upscaled/2012-03-13_5m.png)
+
+Trading FOMC is rather tricky. I used to trade breakouts of prior swing points during FOMC before I was a price action trader but have since moved to the more accurate method of treating FOMC initial bars as a trading range and trading their fBO and BP.
+
+For example, the actual FOMC announcement resulted in b58, which was a large outside bar. Such a bar is a trading range and its BO can usually be faded. b59 was a rather weak bar with a small body compared to its tail size but had a strong close. If this bar was near the high of b58 it would be ideal since it would not force a short mid-TR.
+
+On the other hand a 2L fBO at b65 provided an fBO entry on the other side of b58, which resulted in a large rally.
+
+Note that not all FOMC announcements result in large moves but when they do, its usually a good risk to reward ratio. I recommend fixed size stops especially for large bars to limit your losses.

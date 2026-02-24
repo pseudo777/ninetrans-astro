@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+
+const archive = {};
+allPosts.forEach(post => {
+  const year = post.data.pubDate.getFullYear();
+  const month = post.data.pubDate.getMonth() + 1;
+  const key = `${year}-${month}`;
+  if (!archive[key]) {
+    archive[key] = {
+      year,
+      month,
+      monthName: post.data.pubDate.toLocaleString('default', { month: 'long' }),
+      posts: []
+    };
+  }
+  archive[key].posts.push(post);
+});
+
+const sortedArchive = Object.values(archive).sort((a, b) => {
+  if (a.year !== b.year) return b.year - a.year;
+  return b.month - a.month;
+});
+
+const glossaryTerms = [
+  { term: '1chbo,1cb', definition: 'The first break of a channel move. This is usually expected to fail and is a signal to enter in the direction of the channel' },
+  { term: '1tf,5tf', definition: '1 tick failure. Price goes 1 tick beyond prior bar triggering the trade and proceeds to take out stop. Similarly 5tf, 9tf' },
+  { term: '1PB', definition: 'The first pullback in a day or the first pullback after 1Rev' },
+  { term: '1Rev', definition: 'The first reversal of the day. Also see OR' },
+  { term: 'OR', definition: 'Opening Reversal, A reversal after a trend move attempt in the first hour.' },
+  { term: '1L,2L', definition: '1 legged move, 2 legged move' },
+  { term: 'A2', definition: 'A second attempt to reverse a pullback move near the ema. A second failed attempt to reverse the trend and therefore a continuation signal. If its too far from the ema it may not qualify to be an A2' },
+  { term: 'A22', definition: 'A second entry for an A2, taken perhaps because the first signal required a large stop or had a large overlap.' },
+  { term: 'H1', definition: 'The first time a bar ticks above the high of a previous bar in a down move. First attempt to reverse a down move.' },
+  { term: 'fH1', definition: 'The price falls below the bar that gave an H1, thus failing its attempt to reverse the down move.' },
+  { term: 'fH1 MM', definition: 'In a hard down trend, if the bar that gave an H1 and its previous bar (signal) were weak, the failed H1 is likely to give a measured move from the begin of the move to the failure.' },
+  { term: 'H2', definition: 'Second time a bar ticks above previous bar in a down move after the H1 and fH1' },
+  { term: 'L1,fL1,L2', definition: 'Inverse of H1,fH1,H2 in an up move.' },
+  { term: 'MM', definition: 'Measured move. A 1:1 move expected due to certain price action. For example, price is likely to go 2 points above a breakout bar thats 2 points long.' },
+  { term: 'BO', definition: 'Breakout. Price has moved beyond a price action barrier such as swing high, ema, trendline, etc.' },
+  { term: 'BP', definition: 'Breakout pullback. Price pulls back often back inside the price action barrier that was broken.' },
+  { term: 'fBO', definition: 'A failed breakout. Most first attempts to breakout fail.' },
+  { term: 'DP', definition: 'A pullback that gives a long entry after a double bottom or a short entry after a double top' },
+  { term: 'WP', definition: 'A three legged pullback. This is similar to A2' },
+  { term: 'TL', definition: 'Trendline. A line connecting swing lows in an up move or swing highs in a down move. Can also be a parallel line drawn to TCL.' },
+  { term: 'TCL', definition: 'A line connecting swing highs in an up move or swing lows in a down move. Can also be a parallel line drawn to the TL' },
+  { term: 'G', definition: 'Gap bar. The first bar in a down move whose high is below ema or first bar in an up move whose low is above ema. If this bar is bullish in a bear move, its a buy signal and vice versa.' },
+  { term: 'G2', definition: 'If the G fill attempt fails, a second G bar is G2. This is a higher probability trade.' },
+  { term: 'i, o', definition: 'inside bar, outside bar' },
+  { term: 'ii', definition: 'an inside bar inside another inside bar (also iii and so on)' },
+  { term: 'LL, HH', definition: 'A Lower Low, a Higher High' },
+  { term: 'mW', definition: 'micro Wedge; a TCL of bars rather than swings' },
+  { term: 'PB', definition: 'pullback.' },
+  { term: 'oio, ud', definition: 'Outside inside outside bar reversal, up down bar reversal, etc.' },
+  { term: 'TTR', definition: 'Tight trading range.Overlapping price movement that reverses back and forth after moving a tick or two beyond the previous attempt.' },
+  { term: 'BW', definition: 'Barb wire. Three or more horizontal bars with at least one being a doji. Similar to TTR.' },
+  { term: 'W', definition: 'Wedge. Three pushes up with the third push overshooting a trend channel line or at least touching it. A reversal signal makes it a W reversal' },
+  { term: 'W1P', definition: 'The first pullback that allows an entry in the new direction after a W reversal' }
+];
+---
+
+<BaseLayout title="Nine Transitions - Glossary">
+  <div slot="archive">
+    {sortedArchive.slice(0, 5).map((group) => (
+      <div class="archivedate">
+        <a href="/archive/">{group.year}</a>
+        <span style="margin-left: 0.5rem; color: var(--color-text-light);">
+          ({group.posts.length})
+        </span>
+      </div>
+    ))}
+  </div>
+
+  <article class="post">
+    <h1 class="post-title">Glossary</h1>
+    <div class="post-body">
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+          <thead>
+            <tr style="border-bottom: 2px solid var(--color-border);">
+              <th style="text-align: left; padding: 0.75rem; font-weight: 700;">Term</th>
+              <th style="text-align: left; padding: 0.75rem; font-weight: 700;">Definition</th>
+            </tr>
+          </thead>
+          <tbody>
+            {glossaryTerms.map(({ term, definition }) => (
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <td style="padding: 0.75rem; font-weight: 600; vertical-align: top;">{term}</td>
+                <td style="padding: 0.75rem; vertical-align: top;">{definition}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
