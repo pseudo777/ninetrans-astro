@@ -65,12 +65,12 @@ The built site will be in the `dist/` directory.
 
 ### 2. Update Astro Configuration
 
-Edit `astro.config.mjs` and update the `site` and `base` options:
+The configuration is already set up for your GitHub Pages deployment:
 
 ```javascript
 export default defineConfig({
-  site: 'https://your-username.github.io',  // Replace with your GitHub Pages URL
-  base: '/ninetrans-astro',                   // Replace with your repository name
+  site: 'https://pseudo777.github.io',
+  base: '/ninetrans-astro',
   // ...
 });
 ```
